@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Lung Cancer Prediction</h1>
+
+    <form method="POST">
+        <label>Gender (1=Male, 0=Female)</label>
+        <input type="number" name="gender" required>
+
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Smoking (1=Yes, 0=No)</label>
+        <input type="number" name="smoking" required>
+
+        <label>Yellow Fingers (1=Yes, 0=No)</label>
+        <input type="number" name="yellow_fingers" required>
+
+        <label>Anxiety (1=Yes, 0=No)</label>
+        <input type="number" name="anxiety" required>
+
+        <label>Peer Pressure (1=Yes, 0=No)</label>
+        <input type="number" name="peer_pressure" required>
+
+        <label>Chronic Disease (1=Yes, 0=No)</label>
+        <input type="number" name="chronic_disease" required>
+
+        <label>Fatigue (1=Yes, 0=No)</label>
+        <input type="number" name="fatigue" required>
+
+        <label>Allergy (1=Yes, 0=No)</label>
+        <input type="number" name="allergy" required>
+
+        <label>Wheezing (1=Yes, 0=No)</label>
+        <input type="number" name="wheezing" required>
+
+        <label>Alcohol Consuming (1=Yes, 0=No)</label>
+        <input type="number" name="alcohol" required>
+
+        <label>Coughing (1=Yes, 0=No)</label>
+        <input type="number" name="coughing" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">{{ prediction }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
