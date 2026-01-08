@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import pickle
+import os
 
 app = Flask(__name__)
 
@@ -44,7 +45,7 @@ def index():
             prediction = "No Lung Cancer Detected"
 
     return render_template("index.html", prediction=prediction)
-import os
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
